@@ -5,13 +5,32 @@
 <head>
     <title>Corona Virus Tracker Application</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<!--    <link rel="stylesheet" type="text/css" media="all"-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!--    <link rel="stylesheet" type="text/css" media="all"-->
 <!--          href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />-->
 </head>
 
 <body>
 
+<h1>Corona Virus Tracker Application</h1>
+<p>This application list the current number of cases reported across the Globe</p>
 <p th:text="${testName}"></p>
+
+
+
+<table>
+    <tr>
+        <th>State</th>
+        <th>Country</th>
+        <th>Total cases Reported</th>
+    </tr>
+    <tr th:each="locationStat : ${locationStats}">
+        <td th:text="${locationStat.state}"></td>
+        <td th:text="${locationStat.country}"></td>
+        <td th:text="${locationStat.latestTotalCases}">0</td>
+    </tr>
+</table>
 
 </body>
 
